@@ -5,8 +5,8 @@ VOLUME_HOME="/var/lib/mysql"
 sed -ri -e "s/^upload_max_filesize.*/upload_max_filesize = ${PHP_UPLOAD_MAX_FILESIZE}/" \
     -e "s/^post_max_size.*/post_max_size = ${PHP_POST_MAX_SIZE}/" /etc/php5/apache2/php.ini
 
-sed -ri -e "s/^;extension=php_curl.dll.*/extension=php_curl.dll/" \
-    -e "s/^;extension=php_gd2.dll.*/extension=php_gd2.dll/" /etc/php5/apache2/php.ini
+sed -ri -e "s/^;extension=curl.so.*/extension=curl.so/" \
+    -e "s/^;extension=php_gd2.so.*/extension=php_gd2.so/" /etc/php5/apache2/php.ini
 
 if [[ ! -d $VOLUME_HOME/mysql ]]; then
     echo "=> An empty or uninitialized MySQL volume is detected in $VOLUME_HOME"
