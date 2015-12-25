@@ -33,4 +33,5 @@ echo "Please remember to change the above password as soon as possible!"
 echo "MySQL user 'root' has no password but only allows local connections"
 echo "========================================================================"
 
+sed -ri -e "s/-pwd-*/$PASS/" /app/system/config/config.php
 mysqladmin -uroot shutdown
