@@ -32,7 +32,7 @@ RUN git clone https://github.com/SeekArt/IBOS.git /app
 
 RUN chmod -R 777 /app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
-ADD config.php /app/system/config
+ADD config.php /app/system/config/config.php
 RUN chmod -R 777 /app
 
 #Enviornment variables to configure php
